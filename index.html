@@ -82,7 +82,19 @@
    .on('ready', function() {
     map.fitBounds(runLayer.getBounds());
    }).addTo(map);
-   controlLayers.addOverlay(customLayer, 'Sampled at stations.csv');
+   controlLayers.addOverlay(customLayer, 'Sampled at stations');
+    
+ /* Upload Latitude/Longitude markers - CTD_Profile */
+   var customLayer = L.geoJson(null, {
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup(feature.properties.Stn_Name);
+    }
+   });
+   var runLayer = omnivore.csv('CTD_Profile.csv', null, customLayer)
+   .on('ready', function() {
+    map.fitBounds(runLayer.getBounds());
+   }).addTo(map);
+   controlLayers.addOverlay(customLayer, 'CTD_Profile');
 
 
   </script>
