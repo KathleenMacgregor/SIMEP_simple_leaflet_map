@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>leaflet-map-simple</title>
+  <title>SIMEP-map</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
 
@@ -96,9 +96,155 @@
    .on('ready', function() {
     map.fitBounds(runLayer.getBounds());
    }).addTo(map);
-   controlLayers.addOverlay(customLayer, 'CTD_Profile');
+   controlLayers.addOverlay(customLayer, 'CTD Profile');
 
+/* Upload Latitude/Longitude markers - Benthic_Trawl */
+   var customLayer = L.geoJson(null, {
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup(feature.properties.Stn_Name);
+    }
+   });
+   var runLayer = omnivore.csv('Benthic_Trawl.csv', null, customLayer)
+   .on('ready', function() {
+    map.fitBounds(runLayer.getBounds());
+   }).addTo(map);
+   controlLayers.addOverlay(customLayer, 'Benthic Trawl');
 
+/* Upload Latitude/Longitude markers - Box_Core */
+   var customLayer = L.geoJson(null, {
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup(feature.properties.Stn_Name);
+    }
+   });
+   var runLayer = omnivore.csv('Box_Core.csv', null, customLayer)
+   .on('ready', function() {
+    map.fitBounds(runLayer.getBounds());
+   }).addTo(map);
+   controlLayers.addOverlay(customLayer, 'Box Core');
+    
+/* Upload Latitude/Longitude markers - Dive */
+   var customLayer = L.geoJson(null, {
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup(feature.properties.Stn_Name);
+    }
+   });
+   var runLayer = omnivore.csv('Dive.csv', null, customLayer)
+   .on('ready', function() {
+    map.fitBounds(runLayer.getBounds());
+   }).addTo(map);
+   controlLayers.addOverlay(customLayer, 'Dive Site');
+    
+ /* Upload Latitude/Longitude markers - DropCamera */
+   var customLayer = L.geoJson(null, {
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup(feature.properties.Stn_Name);
+    }
+   });
+   var runLayer = omnivore.csv('DropCamera.csv', null, customLayer)
+   .on('ready', function() {
+    map.fitBounds(runLayer.getBounds());
+   }).addTo(map);
+   controlLayers.addOverlay(customLayer, 'Drop Camera');
+ 
+  /* Upload Latitude/Longitude markers - Gravity_Core */
+   var customLayer = L.geoJson(null, {
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup(feature.properties.Stn_Name);
+    }
+   });
+   var runLayer = omnivore.csv('Gravity_Core.csv', null, customLayer)
+   .on('ready', function() {
+    map.fitBounds(runLayer.getBounds());
+   }).addTo(map);
+   controlLayers.addOverlay(customLayer, 'Gravity Core');
+ 
+   /* Upload Latitude/Longitude markers - Midwater_Trawl */
+   var customLayer = L.geoJson(null, {
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup(feature.properties.Stn_Name);
+    }
+   });
+   var runLayer = omnivore.csv('Midwater_Trawl.csv', null, customLayer)
+   .on('ready', function() {
+    map.fitBounds(runLayer.getBounds());
+   }).addTo(map);
+   controlLayers.addOverlay(customLayer, 'Midwater Trawl');
+    
+    /* Upload Latitude/Longitude markers - Mooring */
+   var customLayer = L.geoJson(null, {
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup(feature.properties.Stn_Name);
+    }
+   });
+   var runLayer = omnivore.csv('Mooring.csv', null, customLayer)
+   .on('ready', function() {
+    map.fitBounds(runLayer.getBounds());
+   }).addTo(map);
+   controlLayers.addOverlay(customLayer, 'Shallow water Mooring');
+    
+
+/* Upload Latitude/Longitude markers - Phyto_Net */
+   var customLayer = L.geoJson(null, {
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup(feature.properties.Stn_Name);
+    }
+   });
+   var runLayer = omnivore.csv('Phyto_Net.csv', null, customLayer)
+   .on('ready', function() {
+    map.fitBounds(runLayer.getBounds());
+   }).addTo(map);
+   controlLayers.addOverlay(customLayer, 'Phytoplankton Net');
+    
+ /* Upload Latitude/Longitude markers - Ponar */
+   var customLayer = L.geoJson(null, {
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup(feature.properties.Stn_Name);
+    }
+   });
+   var runLayer = omnivore.csv('Ponar.csv', null, customLayer)
+   .on('ready', function() {
+    map.fitBounds(runLayer.getBounds());
+   }).addTo(map);
+   controlLayers.addOverlay(customLayer, 'Ponar');
+    
+  /* Upload Latitude/Longitude markers - Rosette CTD */
+   var customLayer = L.geoJson(null, {
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup(feature.properties.Stn_Name);
+    }
+   });
+   var runLayer = omnivore.csv('Rosette_CTD.csv', null, customLayer)
+   .on('ready', function() {
+    map.fitBounds(runLayer.getBounds());
+   }).addTo(map);
+   controlLayers.addOverlay(customLayer, 'Rosette CTD');   
+    
+  /* Upload Latitude/Longitude markers - Zoo Net vert */
+   var customLayer = L.geoJson(null, {
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup(feature.properties.Stn_Name);
+    }
+   });
+   var runLayer = omnivore.csv('Zoo_Net_vert.csv', null, customLayer)
+   .on('ready', function() {
+    map.fitBounds(runLayer.getBounds());
+   }).addTo(map);
+   controlLayers.addOverlay(customLayer, 'Zooplankton Net - vertical');  
+    
+    /* Upload Latitude/Longitude markers - Zoo Net Bongo */
+   var customLayer = L.geoJson(null, {
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup(feature.properties.Stn_Name);
+    }
+   });
+   var runLayer = omnivore.csv('Zoo_Net_Bongo.csv', null, customLayer)
+   .on('ready', function() {
+    map.fitBounds(runLayer.getBounds());
+   }).addTo(map);
+   controlLayers.addOverlay(customLayer, 'Zooplankton Net - Bongo');  
+ 
+    
+    
   </script>
 </body>
 </html>
